@@ -10,14 +10,11 @@ const apiClient: AxiosInstance = axios.create({
 });
 
 apiClient.interceptors.request.use(
-    async (config: AxiosRequestConfig) => {
+    async (config) => {
         try {
             const token = await getAuthToken();
             if (token) {
-                config.headers = {
-                    ...config.headers,
-                    Authorization: `Bearer ${token}`,
-                };
+                config.headers["Authorization"] = `Bearer ${token}`;
             }
         } catch (error) {
             console.error("Failed to fetch auth token:", error);
