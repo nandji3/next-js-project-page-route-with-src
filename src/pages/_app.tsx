@@ -3,7 +3,7 @@ import "../styles/globals.css";
 import Sidebar from "@/components/common/Sidebar";
 import Header from "@/components/common/Header";
 import Footer from "@/components/common/Footer";
-import StoreProvider from "@/components/storeProvider";
+import StoreProvider from "@/components/StoreProvider";
 
 function MyApp({ Component, pageProps }: AppProps) {
     return (
